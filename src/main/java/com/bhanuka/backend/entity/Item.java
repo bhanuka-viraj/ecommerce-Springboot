@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.ManyToAny;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -27,6 +28,10 @@ public class Item {
 
     @Column(nullable = false)
     private Double price;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "category_id")
+    private Category category;
 
     @JsonIgnore
     @ManyToMany(mappedBy = "items")

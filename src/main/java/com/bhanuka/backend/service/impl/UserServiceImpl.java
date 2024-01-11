@@ -1,14 +1,15 @@
-package com.bhanuka.backend.service;
+package com.bhanuka.backend.service.impl;
 
 import com.bhanuka.backend.entity.User;
 import com.bhanuka.backend.reository.UserRepository;
+import com.bhanuka.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
